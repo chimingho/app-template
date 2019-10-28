@@ -1,0 +1,26 @@
+﻿<mat-toolbar class="spa-header">
+</mat-toolbar>
+<mat-sidenav-container class="spa-container">
+    <mat-sidenav #sidenav class="spa-sidenav" mode="side">
+    </mat-sidenav>
+    <mat-sidenav opened mode="side" position="end">End content</mat-sidenav>
+
+    <mat-sidenav-content style="padding-left: 10px">
+        <div class="login-box" style="margin: 50px">
+            <div class="logo">
+                <a href="javascript:void(0);">ClientApp</a>
+            </div>
+
+            <router-outlet></router-outlet>
+
+            <div class="row">
+                <div class="col-xs-12 text-center" style="color: #e9e9e9">
+                    <small>&copy; {{currentYear}}</small>
+                </div>
+            </div>
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="spa-footer"></mat-toolbar>

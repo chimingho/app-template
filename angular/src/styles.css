@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.inner-grid-header{
+  background-color:#808080;
+  color: #fff;
+}
+
+.date-range-start, .date-range-end {
+  display: block;
+  text-indent: 8px;
+  color: #fff;
+  background-color: #656565;
+}
+
+.button-notification {
+  padding: 10px 5px;
+  color: #313536;
+}
+
+.radio-margin {
+  margin: 0 10px;
+}
+
+.progress-spinner {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -50px;
+}

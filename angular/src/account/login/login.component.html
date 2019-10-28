@@ -1,0 +1,58 @@
+﻿<div class="">
+  <div class="body">
+    <form novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="login()">
+      <div class="row clearfix">
+
+        <div class="col-12">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="material-icons">person</i>
+            </span>
+            <div class="col-4">
+              <mat-form-field>
+                <input matInput name="userNameOrEmailAddress" [(ngModel)]="
+                    loginService.authenticateModel.userNameOrEmailAddress
+                  " [placeholder]="'ServiceNow Account'" autocomplete="off" required maxlength="255" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="material-icons">lock</i>
+            </span>
+            <div class="col-4">
+              <mat-form-field>
+                <input matInput type="password" name="password" [(ngModel)]="loginService.authenticateModel.password"
+                  [placeholder]="'Password'" required maxlength="32" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <!--
+        <div class="col-xs-8 p-t-5">
+          <mat-checkbox name="rememberMe" [(ngModel)]="loginService.rememberMe">
+            {{ "RememberMe"}}
+          </mat-checkbox>
+        </div>
+        -->
+        <div class="col-xs-4">
+          <button mat-flat-button type="submit" flex="15" color="accent"
+            [disabled]="submitting">
+            {{ "LogIn"}}
+          </button>
+          <p *ngIf="isLoggedinFailed" style="color:red">* Login failed</p>
+        </div>
+      </div>
+      <!--
+      <div class="row m-t-15 m-b--20" *ngIf="isSelfRegistrationAllowed">
+        <div class="col-xs-12">
+          <a [routerLink]="['../register']">{{ "Register"}}</a>
+        </div>
+      </div>
+      -->
+    </form>
+  </div>
+</div>

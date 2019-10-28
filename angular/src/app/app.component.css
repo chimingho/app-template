@@ -1,0 +1,68 @@
+.spa-container {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
+
+.spa-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  /*background: rgba(255, 0, 0, 0.5);*/
+}
+
+.spa-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.spa-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.toggle-button {
+  position: relative;
+  right: -20px;
+}
+
+
+.legal {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.legal .copyright {
+  font-size: 13px;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.legal .copyright a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.legal .version {
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 5px;
+  font-size: 13px;
+}

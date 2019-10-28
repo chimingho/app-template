@@ -1,0 +1,48 @@
+<mat-toolbar color="warm" class="spa-header">
+  <!-- primary|accent|warm -->
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>AppName</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
+      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
+    </div>
+
+    <span class="menu-spacer"></span>
+    <!-- plug in menus from other module -->
+    <top-bar></top-bar>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span style="font-size: 12px;">second row</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="spa-container">
+  <mat-sidenav #sidenav class="spa-sidenav" mode="side" [(opened)]="opened">
+    <button class="toggle-button" mat-button (click)="sidenav.toggle()">
+      <mat-icon>toggle_on</mat-icon>
+    </button>
+    <sidebar-nav></sidebar-nav>
+    <sidebar-footer></sidebar-footer>
+  </mat-sidenav>
+  <mat-sidenav opened mode="side" position="end">End content</mat-sidenav>
+
+  <mat-sidenav-content style="height: 88vh;padding-left: 10px">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="spa-footer">
+  <div class="legal">
+    <div class="copyright">
+      &copy; {{currentYear}} <a href="javascript:void(0);"></a>.
+    </div>
+    <div class="version">
+      <b>Version </b> {{versionText}}
+    </div>
+  </div>
+</mat-toolbar>
