@@ -1,0 +1,61 @@
+Installed
+============================
+GIT CLI https://git-scm.com/downloads
+GIT Desktop        https://desktop.github.com/
+  GIT Bash  
+
+Node.js and NPM   https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+Python and pip 
+AWS CLI               https://aws.amazon.com/cli/
+  AWS Tools for PowerShell (X) 
+
+.NET framework 4.7.* Build Apps package             https://dotnet.microsoft.com/download?utm_source=ms-docs&utm_medium=referral
+.NET CLI                https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
+  https://github.com/aws/aws-extensions-for-dotnet-cli#aws-elastic-beanstalk-amazonelasticbeanstalktools
+  install dotnet global tools 
+  dotnet tool install -g Amazon.Lambda.Tools
+  dotnet tool install -g Amazon.ElasticBeanstalk.Tools
+    dotnet new -i Amazon.Lambda.Templates  
+
+Visual Studio 2015 	    NFPJW-WP8CX-HBVV2-R6K3J-JFG3M 
+  Extension:
+    AWS Toolkit for Visual Studio 2015           https://aws.amazon.com/visualstudio/
+Visual Studio Code      https://code.visualstudio.com/docs/supporting/FAQ
+  user installer
+  Extension: 
+    AWS Toolkit for visualstudio Code
+    C# extension
+    Debugger for Chrome
+    Paste JSON as Code
+    Code Runner
+    GitLens
+    TSLint
+    PowerShell 
+    @id:ms-azuretools.vscode-docker
+    Kendo UI Template Wizard 
+     
+    
+Testing 
+  localstack: https://github.com/localstack/localstack
+    awscli-local: https://github.com/localstack/awscli-local 
+ 
+
+
+microsoft SQL Server Management Studio 
+optional: MySql WorkBench 
+
+
+optional: 
+  yarn       https://yarnpkg.com/en/docs/install#windows-stable
+  Telerik Progress Control Panel for Windows          https://www.telerik.com/download-trial-file/v2/control-panel
+  Postman base version    https://www.getpostman.com/downloads/
+
+  AWS SAM 
+  AWS EB CLI
+
+
+
+
+not installed yet
+=============================
+browser debuger extension  (Chrome and Firefox) https://augury.rangle.io/
