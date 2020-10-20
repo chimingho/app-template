@@ -1,0 +1,51 @@
+<div [formGroup]="form">
+
+    <div [ngSwitch]="collector.FormInputTypeCode">
+
+        <!-- <pre *ngSwitchDefault>unknow input type</pre>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Hidden'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'TextArea'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'DropDown'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Radio'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'RadioInline'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Link'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'BulletList'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Image'">{{collector.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'ActionButton'">{{collector.Label}}</a> -->
+
+
+        <div class="form-group" *ngSwitchCase="'TextBox'">
+            <label [attr.for]="collector.Id">{{collector.Label}}</label>
+            <!-- <input type="text" class="form-control" [id]="collector.HtmlName" aria-describedby="emailHelp"
+                placeholder="Enter {{collector.Label}}"> -->
+            <input class="form-control" [formControlName]="collector.Id" [id]="collector.Id"
+                [type]="collector.FormInputTypeCode">
+            <small id="emailHelp" class="form-text text-muted">small description</small>
+        </div>
+
+
+        <div class="dropdown" *ngSwitchCase="'DropDown'">
+            <label [attr.for]="collector.Id">{{collector.Label}}</label>
+            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                -- please select --
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" *ngFor='let o of collector.OptionList'>{{o.Description}}</a>
+            </div> -->
+            <select [id]="collector.Id" [formControlName]="collector.Id">
+                <option *ngFor="let opt of collector.OptionList" [value]="opt.Value">{{opt.Description}}</option>
+            </select>
+            </div>
+
+
+
+        <div class="form-check" *ngSwitchCase="'CheckBox'">
+            <input type="checkbox" class="form-check-input" [id]="collector.Id">
+            <label class="form-check-label" [attr.for]="collector.Id">{{collector.Label}}</label>
+        </div>
+
+    </div>
+
+    <div class="errorMessage" *ngIf="!isValid">{{collector.label}} is required</div>
+</div>

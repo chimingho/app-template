@@ -1,0 +1,55 @@
+<div class="card" *ngFor='let q of page.QuestionBlockList'>
+  <div class="card-body">
+    <h5 class="card-title">{{q.QuestionBlockTypeCode}}</h5>
+    <p class="card-text" *ngFor='let l of q.LanguageList'>{{l.Language}}</p>
+    <app-question-form [collectors]="q.CollectorList"></app-question-form>
+
+    <!-- <ng-container *ngFor='let c of q.CollectorList'>
+      <div class="terminal" [ngSwitch]="c.FormInputTypeCode">
+        <pre *ngSwitchDefault>unknow input type</pre>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Hidden'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'TextArea'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'DropDown'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Radio'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'RadioInline'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Link'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'BulletList'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Image'">{{c.Label}}</a>
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'ActionButton'">{{c.Label}}</a>
+
+        <div class="form-group" *ngSwitchCase="'TextBox'">
+          <label [for]="c.HtmlName">{{c.Label}}</label>
+          <input type="text" class="form-control" [id]="c.HtmlName" aria-describedby="emailHelp"
+            placeholder="Enter {{c.Label}}">
+          <small id="emailHelp" class="form-text text-muted">small description</small>
+        </div>
+
+        <div class="form-check" *ngSwitchCase="'CheckBox'">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">{{c.Label}}</label>
+        </div>
+
+        <div class="dropdown" *ngSwitchCase="'DropDown'">
+          <label>{{c.Label}}</label>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            -- please select --
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" *ngFor='let o of c.OptionList'>{{o.Description}}</a>
+          </div>
+        </div>
+
+
+        <div class="form-group" *ngSwitchCase="'DropDown'">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select class="form-control" id="exampleFormControlSelect2">
+            <option>--</option>
+            <option *ngFor='let o of c.OptionList' [value]='o.Value'>{{o.Description}}</option>
+          </select>
+        </div>
+
+      </div>
+    </ng-container> -->
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div *ngIf="collectors.length > 0">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div *ngFor="let collector of collectors" class="form-row">
+      <app-question-form-collector [collector]="collector" [form]="form"></app-question-form-collector>
+    </div>
+
+
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>

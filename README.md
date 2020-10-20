@@ -28,4 +28,13 @@ Copy from templates or run scripts to generate your own.
 3. to debug in linux, add DockerFile. https://code.visualstudio.com/docs/containers/quickstart-aspnet-core
 
 
+##Appendix 
+* MS Agular template is very old. https://medium.com/@waelkdouh/how-to-update-visual-studio-asp-net-core-angular-project-to-the-latest-version-25de32cfeb84
+
+https://stackoverflow.com/questions/44525746/global-angular-cli-version-greater-than-local-version
+
+run "npm install --save-dev @angular/cli@latest" to upgrade 
+
+* https://medium.com/@devblog_/angular-7-import-json-14f8bba534af
+
 
