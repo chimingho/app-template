@@ -23,6 +23,16 @@ export class QuestionFormComponent implements OnInit {
     this.form = this.qcs.toFormGroup(this.collectors);
   }
 
+  populate(){
+    this.form.patchValue(this.collectors);
+  }
+
+  update(){
+    //ajax update call 
+
+
+  }
+
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.getRawValue());
   }

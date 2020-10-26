@@ -13,6 +13,12 @@
         <a href="#" class="btn btn-primary" *ngSwitchCase="'Image'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'ActionButton'">{{collector.Label}}</a> -->
 
+        <div class="form-group" *ngSwitchCase="'TextArea'">
+            <label [attr.for]="collector.Id">{{collector.Label}}</label>
+            <textarea class="form-control" [formControlName]="collector.Id" [id]="collector.Id"></textarea>
+            <small id="emailHelp" class="form-text text-muted">small description</small>
+        </div>
+
 
         <div class="form-group" *ngSwitchCase="'TextBox'">
             <label [attr.for]="collector.Id">{{collector.Label}}</label>
@@ -36,16 +42,18 @@
             <select [id]="collector.Id" [formControlName]="collector.Id">
                 <option *ngFor="let opt of collector.OptionList" [value]="opt.Value">{{opt.Description}}</option>
             </select>
-            </div>
+        </div>
 
 
 
         <div class="form-check" *ngSwitchCase="'CheckBox'">
-            <input type="checkbox" class="form-check-input" [id]="collector.Id">
+            <input type="checkbox" class="form-check-input" [formControlName]="collector.Id" [id]="collector.Id">
             <label class="form-check-label" [attr.for]="collector.Id">{{collector.Label}}</label>
         </div>
 
     </div>
 
-    <div class="errorMessage" *ngIf="!isValid">{{collector.label}} is required</div>
+    <!-- <div *ngIf="form.invalid && (form.dirty || form.touched)" class="alert alert-danger"> -->
+        <div class="errorMessage" *ngIf="!isValid" class="text-danger">{{errorMessage}} </div>
+    <!-- </div> -->
 </div>

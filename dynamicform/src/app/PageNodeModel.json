@@ -283,15 +283,15 @@
                 "Id":281,
                 "Label":"Last Name",
                 "LabelCssClass":null,
-                "DefaultValue":"",
+                "DefaultValue":"xxx",
                 "MaxWidth":0,
-                "MaxCharacters":0,
+                "MaxCharacters":10,
                 "Rows":0,
                 "OptionList":[
                    
                 ],
                 "DataDictionaryId":null,
-                "FormInputTypeCode":"TextBox",
+                "FormInputTypeCode":"TextArea",
                 "LookupTable":null,
                 "CustomCollectorDotNETFunction":null,
                 "IsNewLine":true,
@@ -376,7 +376,7 @@
                 "LabelCssClass":null,
                 "DefaultValue":"",
                 "MaxWidth":0,
-                "MaxCharacters":0,
+                "MaxCharacters":5,
                 "Rows":0,
                 "OptionList":[
                    
