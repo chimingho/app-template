@@ -9,13 +9,12 @@ import { DynamicFormComponent } from './dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
 import { QuestionFormComponent } from './question-form.component';
 import { QuestionFormCollectorComponent } from './question-form-collector.component';
-import { RegxValidatorDirective } from './shared/regx-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     XyzComponent,
-    DynamicFormComponent, DynamicFormQuestionComponent, QuestionFormComponent, QuestionFormCollectorComponent, RegxValidatorDirective,
+    DynamicFormComponent, DynamicFormQuestionComponent, QuestionFormComponent, QuestionFormCollectorComponent,
 
   ],
   imports: [

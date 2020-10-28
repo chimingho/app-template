@@ -1,8 +1,8 @@
 <div class="card" *ngFor='let q of page.QuestionBlockList'>
   <div class="card-body">
     <h5 class="card-title">{{q.QuestionBlockTypeCode}}</h5>
-    <p class="card-text" *ngFor='let l of q.LanguageList'>{{l.Language}}</p>
-    <app-question-form [collectors]="q.CollectorList"></app-question-form>
+    <p class="card-text" *ngFor='let l of q.LanguageList' [innerHTML]="l.Language"></p>
+    <app-question-form [collectors]="q.CollectorList" [page]="page"></app-question-form>
 
     <!-- <ng-container *ngFor='let c of q.CollectorList'>
       <div class="terminal" [ngSwitch]="c.FormInputTypeCode">

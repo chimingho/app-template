@@ -13,6 +13,12 @@
         <a href="#" class="btn btn-primary" *ngSwitchCase="'Image'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'ActionButton'">{{collector.Label}}</a> -->
 
+
+        <div class="form-group" *ngSwitchCase="'ActionButton'">
+            <button type="button" (click)="onSubmit($event)" name="ButtonCancelTree" id="ButtonCancelTree" style="margin-right:30px;">{{collector.Label}}</button> 
+        </div>
+
+
         <div class="form-group" *ngSwitchCase="'TextArea'">
             <label [attr.for]="collector.Id">{{collector.Label}}</label>
             <textarea class="form-control" [formControlName]="collector.Id" [id]="collector.Id"></textarea>

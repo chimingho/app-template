@@ -13,6 +13,7 @@ import { QuestionCollectorService } from './shared/question-collector.service';
 })
 export class QuestionFormComponent implements OnInit {
 
+  @Input() page: any;
   @Input() collectors: CollectorList[] = [];
   form: FormGroup;
   payLoad = '';
