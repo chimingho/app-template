@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 import model from '../PageNodeModel.json';
 import { CollectorList } from './page-node-model';
@@ -8,13 +11,14 @@ import { CollectorList } from './page-node-model';
 @Injectable({
   providedIn: 'root'
 })
-export class PageService {
+export class PageService{
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-
+  
   getPage(){
-    return of(model);
+    //return of(model);
+    return this.http.get('api/model');
   }
 
   getCollectors() {
@@ -23,5 +27,6 @@ export class PageService {
 
     return of(collectors.sort((a, b) => a.SortOrder - b.SortOrder));
   }
+
 
 }
