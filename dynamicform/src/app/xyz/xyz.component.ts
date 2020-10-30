@@ -23,15 +23,22 @@ export class XyzComponent implements OnInit {
 
   constructor(collectorService: QuestionCollectorService, pageService: PageService) {
     this.collectors$ = pageService.getCollectors();
-    this.page$ = pageService.getPage();
-    this.page$.subscribe(
-      x => console.log('Observer got a next value: ' + x),
-      err => console.error('Observer got an error: ' + err),
-      () => console.log('Observer got a complete notification')
+    const sCollector = this.collectors$.subscribe(
+      x => console.log('Collector got a next value: ' + x),
+      err => console.error('Collector Observer got an error: ' + err),
+      () => console.log('Collector Observer got a complete notification')
     );
 
-    this.subscription.add(this.collectors$);
-    this.subscription.add(this.page$);
+
+    this.page$ = pageService.getPage();
+    const sPage = this.page$.subscribe(
+      x => console.log('Page  got a next value: ' + x),
+      err => console.error('Page Observer got an error: ' + err),
+      () => console.log('Page Observer got a complete notification')
+    );
+
+    this.subscription.add(sCollector);
+    this.subscription.add(sPage);
   }
 
   ngOnInit(): void {

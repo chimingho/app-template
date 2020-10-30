@@ -8,11 +8,12 @@
         <a href="#" class="btn btn-primary" *ngSwitchCase="'DropDown'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'Radio'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'RadioInline'">{{collector.Label}}</a>
-        <a href="#" class="btn btn-primary" *ngSwitchCase="'Link'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'BulletList'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'Image'">{{collector.Label}}</a>
         <a href="#" class="btn btn-primary" *ngSwitchCase="'ActionButton'">{{collector.Label}}</a> -->
 
+
+        <a href="#" class="btn btn-primary" *ngSwitchCase="'Link'">{{collector.Label}}</a>
 
         <div class="form-group" *ngSwitchCase="'ActionButton'">
             <button type="button" (click)="onSubmit($event)" name="ButtonCancelTree" id="ButtonCancelTree" style="margin-right:30px;">{{collector.Label}}</button> 
