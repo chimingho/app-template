@@ -33,6 +33,8 @@ Visual Studio Code      https://code.visualstudio.com/docs/supporting/FAQ
     PowerShell 
     @id:ms-azuretools.vscode-docker
     Kendo UI Template Wizard 
+    Live Share & Live Share extension pack
+    Liver Server
      
     
 Testing 

@@ -15,19 +15,19 @@
 
         <a href="#" class="btn btn-primary" *ngSwitchCase="'Link'">{{collector.Label}}</a>
 
-        <div class="form-group" *ngSwitchCase="'ActionButton'">
+        <div class="form-group" *ngSwitchCase="'ActionButton'" [class]=collector.CollectorTypeCd>
             <button type="button" (click)="onSubmit($event)" name="ButtonCancelTree" id="ButtonCancelTree" style="margin-right:30px;">{{collector.Label}}</button> 
         </div>
 
 
-        <div class="form-group" *ngSwitchCase="'TextArea'">
+        <div class="form-group" *ngSwitchCase="'TextArea'" [class]=collector.CollectorTypeCd>
             <label [attr.for]="collector.Id">{{collector.Label}}</label>
             <textarea class="form-control" [formControlName]="collector.Id" [id]="collector.Id"></textarea>
             <small id="emailHelp" class="form-text text-muted">small description</small>
         </div>
 
 
-        <div class="form-group" *ngSwitchCase="'TextBox'">
+        <div class="form-group" *ngSwitchCase="'TextBox'" [class]=collector.CollectorTypeCd>
             <label [attr.for]="collector.Id">{{collector.Label}}</label>
             <!-- <input type="text" class="form-control" [id]="collector.HtmlName" aria-describedby="emailHelp"
                 placeholder="Enter {{collector.Label}}"> -->
@@ -37,7 +37,7 @@
         </div>
 
 
-        <div class="dropdown" *ngSwitchCase="'DropDown'">
+        <div class="dropdown" *ngSwitchCase="'DropDown'" [class]=collector.CollectorTypeCd>
             <label [attr.for]="collector.Id">{{collector.Label}}</label>
             <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +53,7 @@
 
 
 
-        <div class="form-check" *ngSwitchCase="'CheckBox'">
+        <div class="form-check" *ngSwitchCase="'CheckBox'" [class]=collector.CollectorTypeCd>
             <input type="checkbox" class="form-check-input" [formControlName]="collector.Id" [id]="collector.Id">
             <label class="form-check-label" [attr.for]="collector.Id">{{collector.Label}}</label>
         </div>

@@ -1,0 +1,502 @@
+{
+    "Title":"Getting Started",
+    "Menu":{
+       "SectionTreeGuid":"33879307-9854-4bf7-aeac-b4a68a639a69",
+       "IsShowMenu":false,
+       "CurrentMenuText":null,
+       "MenuModelItemList":[
+          
+       ]
+    },
+    "Breadcrumb":{
+       
+    },
+    "QuestionBlockList":[
+       {
+          "QuestionBlockTypeCode":"GreetingWebIntroBlock",
+          "LanguageList":[
+             {
+                "Type":2,
+                "Language":"<!-- Default -->\r\n<span class=\"attentionText\">Instructions</span><br>\r\n\r\nThis page highlights the information contained in the letter we recently sent you. You will have an opportunity to make changes on the following pages.  <br><br>  In the section below, please enter your first and last name along with your relationship to the Policyholder. Then click the \"Continue\" button.  <br><br>  <b>To ensure your renewal is processed on time, please respond no later than 08/03/2019.</b>",
+                "SortOrder":500
+             },
+             {
+                "Type":3,
+                "Language":"<!-- Default -->\r\nNote: policy information listed below reflects data on file as of 05/30/2019.",
+                "SortOrder":600
+             }
+          ],
+          "CollectorList":[
+             
+          ],
+          "IsLastBlockOnPage":false,
+          "SortOrder":500,
+          "Title":"Getting Started",
+          "IsSummary":false,
+          "SummaryItemList":null,
+          "SummaryItemHeaderDict":null
+       },
+       {
+          "QuestionBlockTypeCode":"GreetingWebIntroDriverSummary",
+          "LanguageList":[
+             {
+                "Type":2,
+                "Language":"Our records indicate the following individuals are the only drivers regularly driving your listed vehicles. If there are any errors regarding the list below, or if an additional driver needs to be added or removed, you will have the opportunity to update the list as part of this process.",
+                "SortOrder":500
+             }
+          ],
+          "CollectorList":[
+             
+          ],
+          "IsLastBlockOnPage":false,
+          "SortOrder":600,
+          "Title":"Driver Summary",
+          "IsSummary":true,
+          "SummaryItemList":[
+             {
+                "ObjectNumber":2,
+                "ObjectTypeCd":null,
+                "Column1":"KAREN  PUBLIC ",
+                "Column2":"Female",
+                "Column3":"**/**/1965",
+                "Column4":"",
+                "Column5":"",
+                "Column6":"",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":5,
+                "ObjectTypeCd":null,
+                "Column1":"Clara  Diano ",
+                "Column2":"Female",
+                "Column3":"**/**/2002",
+                "Column4":"",
+                "Column5":"",
+                "Column6":"",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":6,
+                "ObjectTypeCd":null,
+                "Column1":"Clara  Diano ",
+                "Column2":"Female",
+                "Column3":"**/**/2002",
+                "Column4":"",
+                "Column5":"",
+                "Column6":"",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":7,
+                "ObjectTypeCd":null,
+                "Column1":"Clara  Diano ",
+                "Column2":"Female",
+                "Column3":"**/**/2002",
+                "Column4":"",
+                "Column5":"",
+                "Column6":"",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":8,
+                "ObjectTypeCd":null,
+                "Column1":"Queen  Elsa ",
+                "Column2":"Female",
+                "Column3":"**/**/2003",
+                "Column4":"",
+                "Column5":"",
+                "Column6":"",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             }
+          ],
+          "SummaryItemHeaderDict":{
+             "1":{
+                "LabelText":"Full Name",
+                "ColumnNumber":1,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "2":{
+                "LabelText":"Gender",
+                "ColumnNumber":2,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "3":{
+                "LabelText":"Date of Birth",
+                "ColumnNumber":3,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             }
+          }
+       },
+       {
+          "QuestionBlockTypeCode":"GreetingWebIntroVehicleSummary",
+          "LanguageList":[
+             {
+                "Type":2,
+                "Language":"Our records indicate that we currently have the following vehicles listed on your policy. If there are any errors regarding the year, make, or model in the list below, or if an additional vehicle needs to be added or removed, please logout and call 866-997-2398.",
+                "SortOrder":500
+             }
+          ],
+          "CollectorList":[
+             
+          ],
+          "IsLastBlockOnPage":false,
+          "SortOrder":700,
+          "Title":"Vehicle Summary",
+          "IsSummary":true,
+          "SummaryItemList":[
+             {
+                "ObjectNumber":1,
+                "ObjectTypeCd":null,
+                "Column1":"1999",
+                "Column2":"",
+                "Column3":"ACCORD",
+                "Column4":"********27471",
+                "Column5":"Pleasure",
+                "Column6":"10,000 miles",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":2,
+                "ObjectTypeCd":null,
+                "Column1":"2012",
+                "Column2":"",
+                "Column3":"ACADIA",
+                "Column4":"********80000",
+                "Column5":"Pleasure Use",
+                "Column6":"10,700 miles",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             },
+             {
+                "ObjectNumber":3,
+                "ObjectTypeCd":null,
+                "Column1":"2017",
+                "Column2":"",
+                "Column3":"ACADIA",
+                "Column4":"********20041",
+                "Column5":"Pleasure",
+                "Column6":"16,500 miles",
+                "SummaryItemActionList":[
+                   
+                ],
+                "CollectorModelList":[
+                   
+                ]
+             }
+          ],
+          "SummaryItemHeaderDict":{
+             "1":{
+                "LabelText":"Year",
+                "ColumnNumber":1,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "2":{
+                "LabelText":"Make",
+                "ColumnNumber":2,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "3":{
+                "LabelText":"Model",
+                "ColumnNumber":3,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "4":{
+                "LabelText":"VIN",
+                "ColumnNumber":4,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "5":{
+                "LabelText":"Average Commute",
+                "ColumnNumber":5,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             },
+             "6":{
+                "LabelText":"Estimated Annual Mileage",
+                "ColumnNumber":6,
+                "Colspan":null,
+                "CssClass":null,
+                "IsCssAppliedToColumn":false
+             }
+          }
+       },
+       {
+          "QuestionBlockTypeCode":"GreetingWebIntroAuth",
+          "LanguageList":[
+             {
+                "Type":2,
+                "Language":"Only the Policyholder or Policyholder's spouse may confirm or make changes via this website. Please enter your first and last name, along with your relationship to the Policyholder.",
+                "SortOrder":500
+             }
+          ],
+          "CollectorList":[
+             {
+                "Id":281,
+                "Label":"Last Name",
+                "LabelCssClass":null,
+                "DefaultValue":"",
+                "MaxWidth":0,
+                "MaxCharacters":0,
+                "Rows":0,
+                "OptionList":[
+                   
+                ],
+                "DataDictionaryId":null,
+                "FormInputTypeCode":"TextBox",
+                "LookupTable":null,
+                "CustomCollectorDotNETFunction":null,
+                "IsNewLine":true,
+                "SortOrder":200,
+                "CssStyleOptions":null,
+                "CssClass":null,
+                "OptionalHtmlAttributes":null,
+                "ValidationRuleList":[
+                   {
+                      "Regex":"^([- .A-Za-z0-9])*$",
+                      "Message":"Please enter alphabets, numbers & special characters \".\",\" \" and \"-\" ",
+                      "TypeCode":"AlphabetsAndFewSpecialCharactersOnly"
+                   },
+                   {
+                      "Regex":"^(?!\\s*$).+",
+                      "Message":"A response is required",
+                      "TypeCode":"Required"
+                   }
+                ],
+                "IsRequired":true,
+                "JQuerySelector":null,
+                "JQueryCode":"",
+                "ObjectNumber":null,
+                "CollectorTypeCd":"GreetingWebNameLast",
+                "Pager":{
+                   "TotalItems":0,
+                   "CurrentPage":1,
+                   "PageSize":25,
+                   "TotalPages":0,
+                   "StartPage":1,
+                   "EndPage":0
+                },
+                "HtmlIdentifier":"qpColId_",
+                "HtmlName":"qpColId_281"
+             },
+             {
+                "Id":283,
+                "Label":"By checking this box, I am confirming that I am the person above, and all of the responses I provide are true and complete to the best of my knowledge. In addition, I understand that Allstate may follow-up with me to further verify information.",
+                "LabelCssClass":null,
+                "DefaultValue":"",
+                "MaxWidth":0,
+                "MaxCharacters":0,
+                "Rows":0,
+                "OptionList":[
+                   
+                ],
+                "DataDictionaryId":null,
+                "FormInputTypeCode":"CheckBox",
+                "LookupTable":null,
+                "CustomCollectorDotNETFunction":null,
+                "IsNewLine":true,
+                "SortOrder":500,
+                "CssStyleOptions":null,
+                "CssClass":null,
+                "OptionalHtmlAttributes":null,
+                "ValidationRuleList":[
+                   {
+                      "Regex":"^(?!\\s*$).+",
+                      "Message":"A response is required",
+                      "TypeCode":"Required"
+                   }
+                ],
+                "IsRequired":true,
+                "JQuerySelector":null,
+                "JQueryCode":"",
+                "ObjectNumber":null,
+                "CollectorTypeCd":"GreetingWebAcceptTerms",
+                "Pager":{
+                   "TotalItems":0,
+                   "CurrentPage":1,
+                   "PageSize":25,
+                   "TotalPages":0,
+                   "StartPage":1,
+                   "EndPage":0
+                },
+                "HtmlIdentifier":"qpColId_",
+                "HtmlName":"qpColId_283"
+             },
+             {
+                "Id":280,
+                "Label":"First Name",
+                "LabelCssClass":null,
+                "DefaultValue":"",
+                "MaxWidth":0,
+                "MaxCharacters":0,
+                "Rows":0,
+                "OptionList":[
+                   
+                ],
+                "DataDictionaryId":null,
+                "FormInputTypeCode":"TextBox",
+                "LookupTable":null,
+                "CustomCollectorDotNETFunction":null,
+                "IsNewLine":true,
+                "SortOrder":100,
+                "CssStyleOptions":null,
+                "CssClass":null,
+                "OptionalHtmlAttributes":null,
+                "ValidationRuleList":[
+                   {
+                      "Regex":"^([- .A-Za-z0-9])*$",
+                      "Message":"Please enter alphabets, numbers & special characters \".\",\" \" and \"-\" ",
+                      "TypeCode":"AlphabetsAndFewSpecialCharactersOnly"
+                   },
+                   {
+                      "Regex":"^(?!\\s*$).+",
+                      "Message":"A response is required",
+                      "TypeCode":"Required"
+                   }
+                ],
+                "IsRequired":true,
+                "JQuerySelector":null,
+                "JQueryCode":"",
+                "ObjectNumber":null,
+                "CollectorTypeCd":"GreetingWebNameFirst",
+                "Pager":{
+                   "TotalItems":0,
+                   "CurrentPage":1,
+                   "PageSize":25,
+                   "TotalPages":0,
+                   "StartPage":1,
+                   "EndPage":0
+                },
+                "HtmlIdentifier":"qpColId_",
+                "HtmlName":"qpColId_280"
+             },
+             {
+                "Id":282,
+                "Label":"Relationship to Policyholder",
+                "LabelCssClass":null,
+                "DefaultValue":"",
+                "MaxWidth":0,
+                "MaxCharacters":0,
+                "Rows":0,
+                "OptionList":[
+                   {
+                      "Value":"ins",
+                      "Description":"Policyholder",
+                      "SortOrder":100,
+                      "IsSelected":null
+                   },
+                   {
+                      "Value":"spo",
+                      "Description":"Policyholder's Spouse",
+                      "SortOrder":200,
+                      "IsSelected":null
+                   }
+                ],
+                "DataDictionaryId":16,
+                "FormInputTypeCode":"DropDown",
+                "LookupTable":"CallerType",
+                "CustomCollectorDotNETFunction":null,
+                "IsNewLine":true,
+                "SortOrder":300,
+                "CssStyleOptions":null,
+                "CssClass":null,
+                "OptionalHtmlAttributes":null,
+                "ValidationRuleList":[
+                   {
+                      "Regex":"^(?!\\s*$).+",
+                      "Message":"A response is required",
+                      "TypeCode":"Required"
+                   }
+                ],
+                "IsRequired":true,
+                "JQuerySelector":null,
+                "JQueryCode":"",
+                "ObjectNumber":null,
+                "CollectorTypeCd":"GreetingWebRelationship",
+                "Pager":null,
+                "HtmlIdentifier":"qpColId_",
+                "HtmlName":"qpColId_282"
+             }
+          ],
+          "IsLastBlockOnPage":true,
+          "SortOrder":800,
+          "Title":"Authorization",
+          "IsSummary":false,
+          "SummaryItemList":null,
+          "SummaryItemHeaderDict":null
+       }
+    ],
+    "TypeCode":"GreetingWebIntro",
+    "RecordIdentifier":{
+       "QpcIdNum":"QPC08",
+       "BatchId":12996,
+       "RiskStateCd":"GA",
+       "CarrierId":99,
+       "ProgramId":112,
+       "RuleGroupId":44,
+       "ExceptionGroupId":0,
+       "ApplicationTypeCd":"Web",
+       "CustomizationGroupMembershipArray":[
+          86,
+          4,
+          85,
+          1
+       ],
+       "CustomizationGroupMembershipString":"86,4,85,1",
+       "ParentObjectNumber":null,
+       "ObjectNumber":null
+    },
+    "IsContinueButtonVisible":true,
+    "IsCancelTreeButtonVisible":false,
+    "IsBackViewable":true,
+    "IsEndingTreeNode":false,
+    "SectionTreeGuid":"33879307-9854-4bf7-aeac-b4a68a639a69"
+ }
