@@ -67,6 +67,7 @@ namespace WebApplicationCEF6.Controllers
 
             //var model = new PageNodeModel(new Guid(LogicTree.HELP_TREE_GUID), "GreetingWebIntro", recordIdentifier, interview);
             return Ok(model);
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

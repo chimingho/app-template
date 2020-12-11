@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import model from '../../../../../QPC/NICOA/PercentUseOfVehicleBlock.json';
-
+import PageNodeModal from '../PageNodeModel.json';
+import { CollectorList, PageNodeModel } from './page-node-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class InMemoryDataService  implements InMemoryDbService {
       {  id:  4,  num:  'PO4', amount: 4000, userId: 1, clientId: 4, description: 'Insurance policy number PO4' }
      ];
   */
-     return {model};
+     return {PageNodeModal: PageNodeModal, SecondModal: PageNodeModal};
     
      //return model;
   }

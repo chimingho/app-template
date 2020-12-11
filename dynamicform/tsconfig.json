@@ -16,7 +16,18 @@
       "es2018",
       "dom"
     ],
-"resolveJsonModule": true,
-"esModuleInterop": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@node_modules/*": [
+        "node_modules/*"
+      ]
+    },
   }
 }

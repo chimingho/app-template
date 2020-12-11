@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import model from '../PageNodeModel.json';
-import { CollectorList } from './page-node-model';
+import { CollectorList, PageNodeModel } from './page-node-model';
 
 
 @Injectable({
@@ -16,14 +16,14 @@ export class PageService{
   constructor(private http: HttpClient) { }
 
   
-  getPage(){
+  getPage(): Observable<PageNodeModel>{
     //return of(model);
-    return this.http.get('api/model');
+    return this.http.get<PageNodeModel>('api/SecondModal');
   }
 
   getCollectors() {
 
-    const collectors: CollectorList[] = model.QuestionBlockList[3].CollectorList;
+    const collectors: any = model.QuestionBlockList[3].CollectorList;
 
     return of(collectors.sort((a, b) => a.SortOrder - b.SortOrder));
   }

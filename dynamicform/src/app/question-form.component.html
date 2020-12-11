@@ -8,8 +8,10 @@
 
     <div class="form-row">
       <button type="reset" *ngIf="false">Reset</button>
-      <button type="submit" *ngIf="page.IsContinueButtonVisible" [disabled]="!form.valid" name="continueSubmit" id="continueSubmit" style=" margin-right:30px;">Continue</button>
-      <button type="button" *ngIf="page.IsCancelTreeButtonVisible" (click)="onSubmit($event)" name="ButtonCancelTree" id="ButtonCancelTree" style="margin-right:30px;">Cancel</button> 
+      <button type="submit" *ngIf="page.IsContinueButtonVisible" [disabled]="!form.valid" name="continueSubmit"
+        id="continueSubmit" style=" margin-right:30px;">Continue</button>
+      <button type="button" *ngIf="page.IsCancelTreeButtonVisible" (click)="onSubmit($event)" name="ButtonCancelTree"
+        id="ButtonCancelTree" style="margin-right:30px;">Cancel</button>
     </div>
   </form>
 

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { QuestionFormCollectorComponent } from './question-form-collector.compon
 
 import { InMemoryDataService } from './shared/in-memory-data.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +24,9 @@ import { InMemoryDataService } from './shared/in-memory-data.service';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
