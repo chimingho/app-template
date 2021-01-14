@@ -5,25 +5,38 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { XyzComponent } from './xyz/xyz.component';
-import { DynamicFormComponent } from './dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
-import { QuestionFormComponent } from './question-form.component';
-import { QuestionFormCollectorComponent } from './question-form-collector.component';
 
-import { InMemoryDataService } from './shared/in-memory-data.service';
+import { InMemoryDataService } from '../shared/in-memory-data.service';
+import { QuestionFormComponent } from './question/question-form.component';
+import { PageNodeComponent } from './question/page-node.component';
 
+import { PageNodeService } from '../shared/page-node.service';
+import { QuestionFormCollectorComponent } from './question/question-form-collector.component';
+import { AddAttributeDirective } from './question/add-attribute.directive';
+import { SummaryItemComponent } from './question/summary-item.component';
+import { NavbarComponent } from './layout/navbar.component';
+import { SidebarComponent } from './layout/sidebar.component';
+import { FooterComponent } from './layout/footer.component';
+import { QuestionMenuComponent } from './question/question-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    XyzComponent,
-    DynamicFormComponent, DynamicFormQuestionComponent, QuestionFormComponent, QuestionFormCollectorComponent,
-
+    QuestionFormComponent,
+    PageNodeComponent,
+    QuestionFormCollectorComponent,
+    AddAttributeDirective,
+    SummaryItemComponent,
+    NavbarComponent,
+    SidebarComponent,
+    FooterComponent,
+    QuestionMenuComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -35,7 +48,7 @@ import { InMemoryDataService } from './shared/in-memory-data.service';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [PageNodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

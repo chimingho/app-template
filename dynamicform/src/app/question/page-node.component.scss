@@ -1,0 +1,150 @@
+//@import "../../../node_modules/bootstrap//scss/bootstrap.scss";
+$navbar-height: 60px;
+$sidebar-width: fit-content;
+$sidebar-pinned-wdth: 5em;
+
+.wrapper {
+    .pages {
+        position: relative;
+
+        .questionbar {
+            width: $sidebar-width;
+            background: #fff;
+            position: static;
+            transition: left 0.3s ease;
+            left: -$sidebar-width;
+            top: 0;
+            z-index: 111;
+            overflow: auto;
+
+            > div {
+                border-bottom: 1px solid;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            .questionbar-menu {
+                > div {
+                    padding: 0 1.5rem;
+                }
+
+                .menu-header {
+                    padding: 0 1.5rem;
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        display: block;
+
+                        a {
+                            text-decoration: none;
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            height: 45px;
+                            line-height: 45px;
+                            padding: 0 1.5rem;
+                            font-size: 0.8rem;
+                            letter-spacing: 0px;
+                            font-weight: 600;
+
+                            i {
+                                //@extend .icon-style;
+                                font-size: 1rem;
+                            }
+
+                            span {
+                                color: inherit;
+                                margin-left: 1rem;
+                            }
+                        }
+                        // &.current {
+                        //     span {
+                        //         // @extend .badge;
+                        //         // @extend .rounded-pill;
+                        //         //@extend .bg-secondary;
+                        //         // @extend .p-2;
+                        //         color: mediumvioletred;
+                        //         font-size: medium;
+                        //         background-color: green;
+                        //     }
+                        // }
+                    }
+                }
+            }
+        }
+
+        //pin bar
+        @media (max-width: 992px) {
+            .navbar-header {
+                width: $sidebar-pinned-wdth;
+                span {
+                    display: none;
+                }
+            }
+
+            .questionbar {
+                width: $sidebar-pinned-wdth;
+
+                .questionbar-profile {
+                    .user-picture {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                // .profile-details,
+                // .menu-header,
+                // .view-source {
+                //     display: none;
+                // }
+
+                // .questionbar-menu {
+                //     ul a {
+                //         padding: 0.5rem;
+                //         justify-content: center;
+
+                //         span {
+                //             display: none;
+                //         }
+                //     }
+                // }
+            }
+        }
+
+        .toggeled-sidebar {
+            .questionbar {
+                width: $sidebar-width;
+                //display: flex;
+
+                position: absolute;
+                height: 100%;
+                right: 0;
+            }
+            .questionbar-overlay {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 100;
+                opacity: 0.7;
+                display: block;
+                background: #242939;
+
+                // @media (min-width: 768px) {
+                //     display: none;
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<ng-container *ngIf="(page$ | async) as page">
+
+    <div class="wrapper default-theme" [ngClass]="getClasses()">
+        <app-navbar [page]="page" (formEvent)="onQuestionMenuClick($event)"></app-navbar>
+        <main>
+            <app-sidebar [page]="page"></app-sidebar>
+            <div class="pages container-fluid px-4 ">
+                <div class="min-vh-100 d-flex" [ngClass]="{'toggeled-sidebar': isQuestionSidebarPinned}">
+                    <app-question-form [page]="page" (formEvent)="onSubmit($event)"
+                        class="col col-8 bg-faded flex-grow-1">
+                    </app-question-form>
+                    <!-- <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
+                            <app-question-menu [page]="page" (formEvent)="onSubmit($event)">
+                            </app-question-menu>
+                        </aside> -->
+                    <aside class="align-self-stretch questionbar" *ngIf="page.Menu.IsShowMenu">
+                        <nav class="questionbar-menu pt-3 pb-3">
+                            <div class="menu-header mt-3 mb-2 d-flex">
+                                <a class="btn nav-link" (click)="toggleQuestionSidebarPin()"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor"
+                                        class="bi bi-layout-text-sidebar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM3 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm12-1v14h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 0H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h9V1z" />
+                                    </svg></a>
+                            </div>
+                            <div class="menu-header mt-3 mb-2 d-flex">
+                                Pregress
+                            </div>
+                            <ul class="menu-items">
+                                <li *ngFor="let m of sortMenuModule(page.Menu.MenuModelItemList); let i = index"
+                                    [ngClass]="getQuestionMenuClasses(m)">
+                                    <ng-container
+                                        *ngTemplateOutlet="m.isCompleted? menuItemCompleted: m.isCurrentModule? menuItemCurrent: menuItemOthers; context:{index:i, menu:m}">
+                                    </ng-container>
+                                </li>
+
+                                <ng-template #menuItemCompleted let-i="index" let-m="menu">
+                                    <a href="#" routerLink="/dashboard" routerLinkActive="active">
+                                        <span class="badge rounded-pill p-2 bg-success"
+                                            style="color:white; width:3em">{{i}}</span>
+                                        <i class="fa fa-tv"></i>
+                                        <span class="text-nowrap">{{m.Label}}</span>
+                                    </a>
+                                </ng-template>
+                                <ng-template #menuItemCurrent let-i="index" let-m="menu">
+                                    <a href="#" routerLink="/dashboard" routerLinkActive="active">
+                                        <span class="badge rounded-pill p-2 bg-dark"
+                                            style="color:white; width:3em">{{i}}</span>
+                                        <i class="fa fa-tv"></i>
+                                        <span class="text-nowrap">{{m.Label}}</span>
+                                    </a>
+                                </ng-template>
+                                <ng-template #menuItemOthers let-i="index" let-m="menu">
+                                    <a href="#" routerLink="/dashboard" routerLinkActive="active">
+                                        <span class="badge rounded-pill p-2 bg-secondary"
+                                            style="color:white; width:3em">{{i}}</span>
+                                        <i class="fa fa-tv"></i>
+                                        <span class="text-nowrap">{{m.Label}}</span>
+                                    </a>
+                                </ng-template>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="questionbar-overlay" (click)="toggleQuestionSidebarPin()"></div>
+
+                </div>
+                <hr>
+                <app-footer></app-footer>
+
+            </div>
+            <div class="overlay" (click)="toggleSidebar()"></div>
+        </main>
+    </div>
+
+
+
+</ng-container>

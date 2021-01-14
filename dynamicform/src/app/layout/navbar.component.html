@@ -1,0 +1,182 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="#"><img
+                src="https://mymetlife.autopolicyupdate.net/Content/images/logo/Metlife.gif" height="50"
+                alt="Metlife Auto and Home Logo" />
+        </a>
+        <span class="navbar-text text-nowrap">
+            <small>
+                Welcome <strong>{{page.RecordIdentifier.QpcIdNum}}</strong>
+            </small>
+            <strong> @{{page.Title}}</strong>
+        </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list-check" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                        <span class="link-text ms-1">Track Your Progress</span>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li *ngFor="let m of sortMenuModule(page.Menu.MenuModelItemList); let i = index"
+                            [ngClass]="getQuestionMenuClasses(m)">
+                            <ng-container
+                                *ngTemplateOutlet="m.isCompleted? menuItemCompleted: m.isCurrentModule? menuItemCurrent: menuItemOthers; context:{index:i, menu:m}">
+                            </ng-container>
+                        </li>
+
+                        <ng-template #menuItemCompleted let-i="index" let-m="menu">
+                            <a class="dropdown-item" href="#" (click)="onQuestionMenuClick($event, m)"
+                                style="background-color: #dff0d8;">
+                                <span class="text-nowrap">{{m.Label}}</span>
+                            </a>
+                        </ng-template>
+                        <ng-template #menuItemCurrent let-i="index" let-m="menu">
+                            <a class="dropdown-item" href="#" (click)="onQuestionMenuClick($event, m)"
+                                style="background-color: #fcf8e3;">
+                                <span class="text-nowrap">{{m.Label}}</span>
+                            </a>
+                        </ng-template>
+                        <ng-template #menuItemOthers let-i="index" let-m="menu">
+                            <a class="dropdown-item disabled" href="#">
+                                <span class="text-nowrap">{{m.Label}}</span>
+                            </a>
+                        </ng-template>
+                    </ul>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-question-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                            <path
+                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                        </svg> <span class="link-text ms-1">FAQs</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                        </svg><span class="link-text ms-1">Feedback</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-info-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                            <path
+                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg><span class="link-text ms-1">Need Additional Help?</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <span class="link-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-md navbar-dark flex-fill">
+    <!-- <button class="sidebar-toggler ml-4" type="button">
+        <i class="fa fa-navicon"></i>
+    </button> -->
+    <!-- header -->
+    <div class="navbar-header pl-2 pr-2 ml-3 text-center">
+        <a class="navbar-brand m-0 w-100" href="#">
+            <!-- <i class="fa fa-flash mr-1"></i> -->
+            <img src="../assets/logo/Allied.gif" alt="lightning logo" class="image-fluid" width="35px">
+            <!-- <span class="ml-1">Lightning</span> -->
+        </a>
+    </div>
+    <!-- sidebar toggler -->
+    <div class="sidebar-toggler ml-auto mr-3">
+        <a class="btn nav-link" (click)="toggleSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
+                <path
+                    d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z" />
+                <path
+                    d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z" />
+            </svg></a>
+    </div>
+    <!-- right menu toggler -->
+    <div class="nav-toggler-right mr-4 d-md-none">
+        <button class="" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseBasic">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path
+                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+            </svg>
+        </button>
+        <span class="user-profile nav-alert bg-danger"></span>
+    </div>
+    <!-- left box -->
+    <ul class="navbar-nav flex-fill mt-1 align-items-center left-nav">
+        <li class="nav-item navicon">
+            <a class="btn nav-link" (click)="toggleSidebarPin()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
+                    <path
+                        d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z" />
+                    <path
+                        d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z" />
+                </svg></a>
+        </li>
+        <li class="nav-item flex">
+            <a class="btn nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-question-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                </svg> <span class="link-text">FAQs</span>
+            </a>
+        </li>
+        <li class="nav-item flex">
+            <a class="btn nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                </svg><span class="link-text">Feedback</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- right menu -->
+    <!-- <div class="navbar-collapse right-nav" id="collapseBasic" [class]="{collapse: isCollapsed}" style="z-index: 1;">
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="btn nav-link">
+                    <i class="far fa-bell"></i>
+                    <span class="link-text">Alerts</span>
+                    <span class="badge badge-pill ba dge-danger">3</span>
+                    <span class="nav-alert notifications"></span>
+                </a>
+            </li>
+  </ul>
+    </div> -->
+</nav>

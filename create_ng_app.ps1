@@ -20,10 +20,13 @@ Write-Verbose "configure proxy through Run view"
 Write-Verbose "add FormModule, ReactiveFormModule for reactive form"
 
 npm i angular-in-memory-web-api
+npm i bootstrap-icons
 
-
-
-
+#form performance tuning
+#npm install -g webpack-bundle-analyzer
+#ng build --stats-json
+#webpack-bundle-analyzer path/to/your/stats.json
+#content-encoding: gzip (how to do it in infrastructure? )
 
 
 

@@ -1,0 +1,116 @@
+<ng-container class="collector col-md-6" [formGroup]="form" [ngSwitch]="true">
+
+    <!-- <pre *ngSwitchDefault>unknow input type</pre> -->
+
+    <ul class="" [class]="collector.LabelCssClass" *ngSwitchCase="collector.FormInputTypeCode === 'BulletList'">
+        <li class="" *ngFor='let option of collector.OptionList; let i = index'>
+            {{option.Description}}</li>
+    </ul>
+
+    <img [src]="collector.DefaultValue" class="img-fluid" [class]="collector.LabelCssClass" alt=""
+        *ngSwitchCase="collector.FormInputTypeCode === 'Image'">
+
+    <div class="form-group" *ngSwitchCase="collector.FormInputTypeCode === 'Radio'" [class]="collector.LabelCssClass">
+        <div class="mr-3">
+            <label class="" [attr.for]="collector.HtmlName" [innerHTML]="collector.Label">
+                <span *ngIf="collector.IsRequired" class="required-asterisk">*</span>
+
+            </label>
+        </div>
+        <div class="form-check mr-2" *ngFor='let option of collector.OptionList; let i = index'>
+            <input type="radio" class="form-check-input" [formControlName]="collector.HtmlName"
+                [id]="collector.HtmlName+i" [name]="collector.HtmlName" [value]="option.Value"
+                [checked]="option.IsSelected">
+            <label class="form-check-label" [attr.for]="collector.HtmlName+i">{{option.Description}}</label>
+        </div>
+        <small class="errorMessage" *ngIf="isInvalid" class="text-danger">{{errorMessage}} </small>
+    </div>
+
+    <div class="form-group form-inline" *ngSwitchCase="collector.FormInputTypeCode === 'RadioInline'"
+        [class]="collector.LabelCssClass">
+        <div class="mr-3">
+            <label class="" [attr.for]="collector.HtmlName" [innerHTML]="collector.Label"><span
+                    *ngIf="collector.IsRequired" class="required-asterisk">*</span></label>
+        </div>
+        <div class="form-check form-check-inline mr-2" *ngFor='let option of collector.OptionList; let i = index'>
+            <input type="radio" class="form-check-input" [formControlName]="collector.HtmlName"
+                [id]="collector.HtmlName+i" [name]="collector.HtmlName" [value]="option.Value"
+                [checked]="option.IsSelected">
+            <label class="form-check-label" [attr.for]="collector.HtmlName+i">{{option.Description}}</label>
+        </div>
+        <small class="errorMessage" *ngIf="isInvalid" class="text-danger">{{errorMessage}} </small>
+    </div>
+
+
+    <div class="form-group" *ngSwitchCase="collector.FormInputTypeCode === 'Hidden'" [class]="collector.LabelCssClass">
+        <input class="form-control" [formControlName]="collector.HtmlName" [id]="collector.HtmlName"
+            [type]="collector.FormInputTypeCode">
+    </div>
+
+
+    <a href="#" class="btn btn-primary" [class]="collector.LabelCssClass"
+        *ngSwitchCase="collector.FormInputTypeCode === 'Link'">{{collector.Label}}</a>
+
+    <div class="form-group" *ngSwitchCase="collector.FormInputTypeCode === 'ActionButton'"
+        [class]="collector.LabelCssClass">
+        <button class="btn btn-primary" type="submit" [id]="collector.HtmlName" [name]="collector.HtmlName"
+            [value]="collector.CollectorTypeCd" style="margin-right:30px;">{{collector.Label}}</button>
+    </div>
+
+
+    <div class="form-group form-floating mb-3" *ngSwitchCase="collector.FormInputTypeCode === 'TextArea'"
+        [class]="collector.LabelCssClass">
+        <textarea class="form-control" [formControlName]="collector.HtmlName" [id]="collector.HtmlName"
+            style="height: 100px"></textarea>
+        <label class="" [attr.for]="collector.HtmlName">{{collector.Label}}<span *ngIf="collector.IsRequired"
+                class="required-asterisk">*</span></label>
+        <small class="errorMessage" *ngIf="isInvalid" class="text-danger">{{errorMessage}} </small>
+    </div>
+
+
+    <div class="form-group form-floating mb-3"
+        *ngSwitchCase="collector.FormInputTypeCode === 'TextBox' || collector.FormInputTypeCode === 'text' || collector.FormInputTypeCode === 'number'"
+        [class]="collector.LabelCssClass">
+        <input class="form-control" [formControlName]="collector.HtmlName" [id]="collector.HtmlName"
+            [type]="collector.FormInputTypeCode">
+        <label class="" [attr.for]="collector.HtmlName">{{collector.Label}}<span *ngIf="collector.IsRequired"
+                class="required-asterisk">*</span></label>
+        <small class="errorMessage" *ngIf="isInvalid" class="text-danger">{{errorMessage}} </small>
+    </div>
+
+    <div class="form-group form-floating mb-3" *ngSwitchCase="collector.FormInputTypeCode === 'date'"
+        [class]="collector.LabelCssClass">
+        <input class="form-control" [formControlName]="collector.HtmlName" [id]="collector.HtmlName"
+            [type]="collector.FormInputTypeCode" [min]='collector.OptionalHtmlAttributes?.min'>
+        <label class="" [attr.for]="collector.HtmlName">{{collector.Label}}<span *ngIf="collector.IsRequired"
+                class="required-asterisk">*</span></label>
+        <small class="errorMessage" *ngIf="isInvalid" class="text-danger">{{errorMessage}} </small>
+    </div>
+
+
+    <div class="dropdown form-floating mb-3" *ngSwitchCase="collector.FormInputTypeCode === 'DropDown'"
+        [class]="collector.LabelCssClass">
+
+        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            -- please select --
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" *ngFor='let o of collector.OptionList'>{{o.Description}}</a>
+        </div> -->
+        <select class="form-select" [id]="collector.HtmlName" [formControlName]="collector.HtmlName">
+            <option *ngFor="let opt of collector.OptionList" [value]="opt.Value">{{opt.Description}}
+            </option>
+        </select>
+        <label class="" [attr.for]="collector.HtmlName">{{collector.Label}}<span *ngIf="collector.IsRequired"
+                class="required-asterisk ">*</span></label>
+    </div>
+
+    <div class="form-group form-check" *ngSwitchCase="collector.FormInputTypeCode === 'CheckBox'"
+        [class]="collector.LabelCssClass">
+        <input type="checkbox" class="form-check-input" [formControlName]="collector.HtmlName"
+            [id]="collector.HtmlName">
+        <label class="form-check-label " [attr.for]="collector.HtmlName" [innerHTML]="collector.Label"><span
+                *ngIf="collector.IsRequired" class="required-asterisk">*</span></label>
+    </div>
+</ng-container>

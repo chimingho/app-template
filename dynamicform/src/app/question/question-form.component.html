@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit($event, form)" [formGroup]="form" #parentForm="ngForm">
+
+    <form (ngSubmit)="onSubmit($event, form.get(q.QuestionBlockTypeCode))"
+        [formGroup]="form.get(q.QuestionBlockTypeCode)" *ngFor='let q of sort(page.QuestionBlockList); let i=index;'>
+        <!-- disable accordion -->
+        <!-- <div class="accordion" [id]="'accordion' + i">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading" style="background-color: dark;">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        [attr.data-bs-target]="'#' + q.QuestionBlockTypeCode" aria-expanded="true"
+                        [attr.aria-controls]="q.QuestionBlockTypeCode">
+                        {{q.Title}} </button>
+                </h2>
+                <div [id]="q.QuestionBlockTypeCode" class="accordion-collapse collapse show" aria-labelledby="heading"
+                    [attr.data-bs-parent]="'#accordion' + i"> -->
+        <div class="accordion-body card form-row">
+            <div class="card-body">
+                <h5 class="card-title question-title">{{q.Title}}</h5>
+                <p class="card-text" *ngFor='let l of q.LanguageList' [innerHTML]="l.Language"></p>
+
+                <app-summary-item *ngIf="q.IsSummary" [questionBlock]="q" [form]="form.get(q.QuestionBlockTypeCode)">
+                </app-summary-item>
+                <ng-container *ngIf="q.CollectorList?.length > 0">
+                    <ng-container *ngFor="let collector of sort(q.CollectorList)">
+                        <app-question-form-collector [collector]="collector" [form]="form.get(q.QuestionBlockTypeCode)">
+                        </app-question-form-collector>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <!-- </div>
+            </div>
+        </div> -->
+    </form>
+
+
+
+
+    <div class="form-row card">
+        <div class="card-body">
+            <button class="btn btn-primary" type="reset" *ngIf="false">Reset</button>
+            <button class="btn btn-primary" type="submit" *ngIf="page.IsContinueButtonVisible" name="continueSubmit"
+                id="continueSubmit" style=" margin-right:30px;">Continue</button>
+            <button class="btn btn-primary" type="button" *ngIf="page.IsCancelTreeButtonVisible"
+                (click)="onSubmit($event)" name="ButtonCancelTree" id="ButtonCancelTree"
+                style="margin-right:30px;">Cancel</button>
+            <ng-container *ngIf="parentForm.submitted && form.invalid" class="">
+                <span class="errorMessage" class="text-danger">*Required Response</span>
+            </ng-container>
+        </div>
+    </div>
+
+
+    <div *ngIf="payLoad" class="form-row card">
+        <strong>Saved the following values</strong><br>{{payLoad}}
+    </div>
+</form>
