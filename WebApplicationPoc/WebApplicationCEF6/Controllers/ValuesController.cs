@@ -57,15 +57,9 @@ namespace WebApplicationCEF6.Controllers
             }
             */
 
-                            var interview = CCModel.Interview.GetInterview(99, "QPC08", "Web");
-            var recordIdentifier = RecordIdentifier.FindByPolicyWithPin("QPC08", "qpctest", interview);
-            recordIdentifier.ApplicationTypeCd = "Web";
-            recordIdentifier.CustomizationGroupMembershipArray = new int[] { 86, 4, 85, 1 };
-            recordIdentifier.CustomizationGroupMembershipString = "86,4,85,1";
-            interview.RecordIdentifier = recordIdentifier;
-            var model = new PageNodeModel(new Guid("daa90568-5072-4c76-aa3e-98ccfce67c68"), "CommuteSummary", recordIdentifier, interview);
+            var interview = CCModel.Interview.GetInterview(41, "QPC08", "Web");
+            var model = new PageNodeModel(new Guid(LogicTree.HELP_TREE_GUID), "GreetingWebIntro", interview.RecordIdentifier, interview);
 
-            //var model = new PageNodeModel(new Guid(LogicTree.HELP_TREE_GUID), "GreetingWebIntro", recordIdentifier, interview);
             return Ok(model);
             //return new string[] { "value1", "value2" };
         }

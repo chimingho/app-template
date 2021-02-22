@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace WebApplicationCEF6
+namespace VISU.WebResponse.API
 {
     public class Program
     {
@@ -19,6 +19,8 @@ namespace WebApplicationCEF6
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                //.UseUrls("http://localhost:4000")
+            ;
     }
 }

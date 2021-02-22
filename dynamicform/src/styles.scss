@@ -1,30 +1,146 @@
-/* You can add global styles to this file, and also import other style files */
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@charset "UTF-8";
 
-$hamburger-padding-x           : 0px !default;
-$hamburger-padding-y           : 0px !default;
-$hamburger-layer-width         : 25px !default;
-$hamburger-layer-height        : 2px !default;
-$hamburger-layer-spacing       : 5px !default;
-$hamburger-layer-color         : #9b9ea2 !default;
-$hamburger-layer-border-radius : 4px !default;
-$hamburger-hover-opacity       : 0.7 !default;
-
-@import '~bootstrap/scss/bootstrap';
-// @import '~font-awesome/scss/font-awesome';
-// @import '~hamburgers/_sass/hamburgers/hamburgers';
-// @import '~ngx-toastr/toastr-bs4-alert';
-
+// Font Awesome
+//@import "~font-awesome/scss/font-awesome";
 // @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 // @import '~@fortawesome/fontawesome-free/scss/solid';
 // @import '~@fortawesome/fontawesome-free/scss/regular';
 // @import '~@fortawesome/fontawesome-free/scss/brands';
 
-@import './assets/lightning-admin';
+//bootstrap
+@import "~bootstrap/scss/bootstrap";
+// find tune bootstrap
+// Required
+// functions and mixins first
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/mixins";
 
+// override bootstrap functions to comply with --vars
+// @import "functions-override";
 
+// Override Boostrap variables
+// @import "bootstrap-variables";
+// add other themes if you want
+// @import "~bootswatch/dist/sandstone/variables";
 
-.required-asterisk{
+// Optional
+// @import "../node_modules/bootstrap/scss/root";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/containers";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/root";
+// @import "~bootstrap/scss/reboot";
+// @import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/code";
+// @import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/tables";
+// @import "~bootstrap/scss/forms";
+// @import "~bootstrap/scss/buttons";
+// @import "~bootstrap/scss/transitions";
+// @import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+// @import "~bootstrap/scss/input-group";
+// @import "~bootstrap/scss/custom-forms";
+// @import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
+// @import "~bootstrap/scss/utilities";
+// @import "~bootstrap/scss/print";
+
+// For Angular Material Design
+// @import "~@angular/material/theming";
+// @include mat-core();
+// $primary: mat-palette($mat-indigo);
+// $accent: mat-palette($mat-pink, A200, A100, A400);
+// $warn: mat-palette($mat-red);
+// $theme: mat-light-theme($primary, $accent, $warn);
+// @include angular-material-theme($theme);
+
+// Angular Material asks for a color palette
+// $dynamic-theme-primary: (
+//   50 : var(--theme-primary-50),
+//   100 : var(--theme-primary-100),
+//   200 : var(--theme-primary-200),
+//   300 : var(--theme-primary-300),
+//   400 : var(--theme-primary-400),
+//   500 : var(--theme-primary-500),
+//   600 : var(--theme-primary-600),
+//   700 : var(--theme-primary-700),
+//   800 : var(--theme-primary-800),
+//   900 : var(--theme-primary-900),
+//   A100 : var(--theme-primary-A100),
+//   A200 : var(--theme-primary-A200),
+//   A400 : var(--theme-primary-A400),
+//   A700 : var(--theme-primary-A700),
+//   contrast: (
+//     50: var(--theme-primary-contrast-50),
+//     100: var(--theme-primary-contrast-100),
+//     200: var(--theme-primary-contrast-200),
+//     300: var(--theme-primary-contrast-300),
+//     400: var(--theme-primary-contrast-400),
+//     500: var(--theme-primary-contrast-500),
+//     600: var(--theme-primary-contrast-600),
+//     700: var(--theme-primary-contrast-700),
+//     800: var(--theme-primary-contrast-800),
+//     900: var(--theme-primary-contrast-900),
+//     A100: var(--theme-primary-contrast-A100),
+//     A200: var(--theme-primary-contrast-A200),
+//     A400: var(--theme-primary-contrast-A400),
+//     A700: var(--theme-primary-contrast-A700),
+//   )
+// );
+
+// @use "@material/theme" with (
+//   $primary: #fcb8ab,
+//   $secondary: #feeae6,
+//   $on-primary: #442b2d,
+//   $on-secondaryx: #442b2d,
+// );
+// @use "@material/button/mdc-button";
+
+//https://material.io/develop/web/components/theme#text-styles
+
+:root {
+    --theme-url: "some-css-file.css";
+}
+
+$background: var(--background, #fff);
+$on-background: var(--on-background, #000);
+$primary: var(--primary, #006ba6);
+$on-primary: var(--on-primary, #fff);
+$secondary: var(--secondary, #54585a);
+$on-secondary: var(--on-secondary, #fff);
+$surface: var(--surface, blue);
+$on-surface: var(--on-surface, blue);
+$error: var(--error, blue);
+$on-error: var(--on-error, blue);
+$text-primary-on-light: var(--text-primary-on-light, blue);
+$text-primary-on-dark: var(--text-primary-on-dark, blue);
+
+@import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700";
+//@import "./assets/theme-default/verisk";
+//@import url("./assets/theme-default/verisk.scss");
+
+.required-asterisk {
     color: red;
     font-weight: bold;
 }
