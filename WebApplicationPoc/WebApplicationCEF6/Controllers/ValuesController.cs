@@ -88,5 +88,13 @@ namespace WebApplicationCEF6.Controllers
         public void Delete(int id)
         {
         }
+
+        static public int Test(int i) {
+            var interview = CCModel.Interview.GetInterview(41, "QPC08", "Web");
+            var model = new PageNodeModel(new Guid(LogicTree.HELP_TREE_GUID), "GreetingWebIntro", interview.RecordIdentifier, interview);
+
+            return i;
+        }
+
     }
 }

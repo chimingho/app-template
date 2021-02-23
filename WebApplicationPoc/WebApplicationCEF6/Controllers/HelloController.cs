@@ -14,7 +14,7 @@ namespace VISU.WebResponse.API.Controllers
     /// <summary>
     /// Health check class
     /// </summary>
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class HelloController : ControllerBase
@@ -25,6 +25,7 @@ namespace VISU.WebResponse.API.Controllers
             return Ok("alive!");
         }
 
+        /*
         [HttpGet]
         [Route("GetCarriers")]
         public ActionResult<IList<Carrier>> GetCarriers()
@@ -50,7 +51,7 @@ namespace VISU.WebResponse.API.Controllers
             return Ok(list);
         }
 
-
+*/
 
     }
 }
